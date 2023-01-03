@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+:root {
+  --Main-Color: #2173fd;
+  --Hover-Color: #005bd8;
+  --White-Color: #ffffff;
+  --BG-Color: #ebecef;
+  --Dark-Color: #1b1b1b;
+  --Error-Color: #ff1e3e;
+  --Border-Color: #c2c1c9;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--Main-Color);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 40rem;
+  height: 40rem;
+  padding: 3rem;
+  background-color: var(--White-Color);
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+.container .title_section {
+  width: 100%;
+  text-align: center;
+}
+.title_section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--Main-Color);
+}
+
+.container .forms {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  overflow: hidden;
+}
+.forms .login_form {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  transition: all 0.5s linear;
+}
+.forms .login_form.active {
+  left: -120%;
+}
+.login_form .input_field {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+}
+.login_form .input_field input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 1.6rem;
+  background-color: var(--White-Color);
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--Border-Color);
+  padding: 0 3.5rem;
+  transition: 0.2s ease;
+  letter-spacing: 1px;
+}
+.login_form .input_field input:is(:focus, :valid) {
+  border-bottom-color: var(--Main-Color);
+}
+.login_form .input_field i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.8rem;
+  color: var(--Border-Color);
+  transition: 0.2s ease;
+}
+.login_form .input_field input:is(:focus, :valid) ~ i {
+  color: var(--Main-Color);
+}
+.login_form .input_field i.icon {
+  left: 0;
+}
+.login_form .input_field i.showHidePw {
+  right: 0;
+  cursor: pointer;
+}
+.login_form .forgot_pw {
+  width: 100%;
+}
+.login_form .forgot_pw a {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  color: var(--Main-Color);
+}
+.login_form .forgot_pw a:hover {
+  text-decoration: underline;
+  color: var(--Hover-Color);
+}
+.login_form .login_btn {
+  width: 100%;
+  text-align: center;
+}
+.login_form .login_btn button {
+  width: 100%;
+  padding: 1.5rem 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--White-Color);
+  background-color: var(--Main-Color);
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: 0.2s ease;
+}
+.login_form .login_btn button:hover {
+  background-color: var(--Hover-Color);
+  box-shadow: 0 .5rem 1rem .5rem rgba(0, 0, 0, 0.1);
+}
+.login_form p {
+  font-size: 1.5rem;
+  color: var(--Dark-Color);
+}
+.login_form p span {
+  color: var(--Main-Color);
+  font-weight: 700;
+  cursor: pointer;
+}
+.login_form p span:hover {
+  color: var(--Hover-Color);
+  text-decoration: underline;
+}
+.forms .register_form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  transition: all 0.5s linear;
+}
+
+.register_form .input_field {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+}
+.register_form .input_field input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 1.6rem;
+  background-color: var(--White-Color);
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--Border-Color);
+  padding: 0 3.5rem;
+  transition: 0.2s ease;
+  letter-spacing: 1px;
+}
+.register_form .input_field input:is(:focus, :valid) {
+  border-bottom-color: var(--Main-Color);
+}
+.register_form .input_field i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.8rem;
+  color: var(--Border-Color);
+  transition: 0.2s ease;
+}
+.register_form .input_field input:is(:focus, :valid) ~ i {
+  color: var(--Main-Color);
+}
+.register_form .input_field i.icon {
+  left: 0;
+}
+.register_form .input_field i.showHidePw {
+  right: 0;
+  cursor: pointer;
+}
+.register_form .forgot_pw {
+  width: 100%;
+}
+.register_form .forgot_pw a {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  color: var(--Main-Color);
+}
+.register_form .login_btn {
+  width: 100%;
+  text-align: center;
+}
+.register_form .login_btn button {
+  width: 100%;
+  padding: 1.5rem 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--White-Color);
+  background-color: var(--Main-Color);
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: .2s ease;
+}
+.register_form .login_btn button:hover {
+  background-color: var(--Hover-Color);
+  box-shadow: 0 .5rem 1rem .5rem rgba(0, 0, 0, 0.1);
+}
+.register_form p {
+  font-size: 1.5rem;
+  color: var(--Dark-Color);
+}
+.register_form p span {
+  color: var(--Main-Color);
+  font-weight: 700;
+  cursor: pointer;
+}
+.register_form p span:hover {
+  color: var(--Hover-Color);
+  text-decoration: underline;
+}
+.forms .register_form {
+  position: absolute;
+  left: 120%;
+}
+.forms .register_form.active {
+  left: 0;
+}
